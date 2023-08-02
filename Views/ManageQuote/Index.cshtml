@@ -1,0 +1,115 @@
+﻿@model  QuoteFastMVC.Models.ManageQuoteViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search Quote</h2>
+<div class="searchFormContainer">
+    @using (Html.BeginForm("Search", "ManageQuote", FormMethod.Post, new { @class = "form-horizontal", id = "searchForm" }))
+    {
+        <div class="form-group">
+            <label for="selectCustomer">Select Customer:</label>
+            @Html.DropDownListFor(x => x.Companies, new SelectList(Model.Companies.ToList(), "CompanyId", "Name"), "--Select--", new { @id = "companyDropdown", @name = "companyName" });
+        </div>
+
+        <div class="form-group">
+            <label for="siteDropdown">Site Name:</label>
+            @Html.DropDownListFor(x => x.Addresses, new SelectList(Model.Addresses.ToList(), "CRMAddressID", "Address1"), "-- Select Site --", new { @class = "form-control", @id = "siteDropdown", @name = "siteDropdown" })
+        </div>
+
+        <div class="form-group">
+            <label for="selectSalesPerson1">Select Sales Person 1:</label>
+            @Html.DropDownListFor(x => x.Users1, new SelectList(Model.Users1.ToList(), "UserID", "FullName"), "--Select--", new { @id = "salesPerson1Dropdown", @name = "selectPaerson1" });
+        </div>
+        
+        <div class="form-group">
+            <label for="selectSalesPerson2">Select Sales Person 2:</label>
+            @Html.DropDownListFor(x => x.Users2, new SelectList(Model.Users2.ToList(), "UserID", "FullName"), "--Select--", new { @id = "salesPerson2Dropdown", @name = "selectPaerson1" });
+        </div>
+        <div class="form-group">
+            <label for="quoteNumber">Quote Number</label>
+            <input class="form-control" name="quoteNumber" asp-for="QuoteNumber" />
+        </div>
+        <div class="form-group">
+            <label for="quoteNumber">Quote Header</label>
+            <input type="text" class="form-control" name="quoteHeader" asp-for="QuoteHeader" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select class="form-control" name="status" asp-for="Status">
+                <option value="1234" selected>ALL</option>
+                <option value="124">Active</option>
+                <option value="1"> &nbsp;New/InUse</option>
+                <option value="2"> &nbsp; Send To Client</option>
+                <option value="4"> &nbsp;Rejected</option>
+                <option value="3">Inactive</option>
+                <option value="3"> &nbsp; Accepted</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <select class="form-control" name="age" asp-for="Age">
+                <option value="30">30 Days</option>
+                <option value="60">60 Days</option>
+                <option value="90">90 Days</option>
+                <option value="365">1 Year</option>
+                <option value="4" selected>ALL</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }
+
+</div>
+<div id="searchResultContainer">
+    @Html.Partial("_SearchResult")
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#companyDropdown").change(function () {
+            var selectedCompanyId = $(this).val();
+            $.ajax({
+                url: "/ManageQuote/GetSite",
+                type: "POST",
+                data: { id: selectedCompanyId },
+                success: function (data) {
+                    var siteDropdown = $("#siteDropdown");
+                    siteDropdown.empty();
+                    siteDropdown.prop("disabled", false);
+
+                    $.each(data, function (index, site) {
+                        siteDropdown.append($('<option></option>').val(site.CRMAddressID).text(site.Address1));
+                    });
+                },
+                error: function () {
+                }
+            });
+        });
+    });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#searchForm").submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                url: "/ManageQuote/Search", 
+                type: "POST",
+                data: formData,
+                processData: false, 
+                contentType: false, 
+                success: function (data) {
+                    //debugger;
+                    $("#searchResultContainer").html(data);
+                },
+                error: function () {
+                }
+            });
+        });
+    });
+</script>

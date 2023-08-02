@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9bcbffeea9764994a39cd5b6e32097b0" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Membership" Width="1.5" PointX="6" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Paths" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Roles" Width="1.5" PointX="3" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_SchemaVersions" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.aspnet_WebEvent_Events" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Branch" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_DefaultItemType" Width="1.5" PointX="11.25" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Department" Width="1.5" PointX="13.5" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_DesignerInitials" Width="1.5" PointX="8.25" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Product" Width="1.5" PointX="13.5" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_ProductType" Width="1.5" PointX="11.25" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_ProfitType" Width="1.5" PointX="8.25" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Quote" Width="1.5" PointX="10.5" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_QuoteGroup" Width="1.5" PointX="15.5" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_QuoteItem" Width="1.5" PointX="15.75" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_QuoteTerm" Width="1.5" PointX="12.75" PointY="47.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Rate" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_RateCategory" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_RateType" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_SecretaryRelationship" Width="1.5" PointX="7.5" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WorkOrder" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WorkOrder_EmailList" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WorkOrder_Log" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WorkOrder_Products" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_Workorder_SentTo" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WorkOrder_Type" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_WOSubContractor" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CRM_Address" Width="1.5" PointX="12.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CRM_Company" Width="1.5" PointX="7.5" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CRM_PhoneType" Width="1.5" PointX="10.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.LicenseAgreement" Width="1.5" PointX="5.25" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.Licensee" Width="1.5" PointX="3" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.Quote" Width="1.5" PointX="5.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteColumn" Width="1.5" PointX="5.25" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteData" Width="1.5" PointX="7.5" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteGroup" Width="1.5" PointX="7.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteGroupType" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteLog" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteTemplateValue" Width="1.5" PointX="7.5" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteTermCondition" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.Status" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.sysdiagram" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.SystemParameter" Width="1.5" PointX="5.25" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.Template" Width="1.5" PointX="2.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.TemplateValue" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.TermCondition" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.User" Width="1.5" PointX="5.25" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.UserLicenseAgreement" Width="1.5" PointX="7.5" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_QuoteGroupView" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.CDC_QuoteNumberGenerator" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteGroupView" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteItemGroupTypeView" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.QuoteView" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_Applications" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_Profiles" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_Roles" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_Users" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_CRM_Company" Width="1.5" PointX="10.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuoteFastModel.vw_User" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Me__Appli__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Pa__Appli__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Ro__Appli__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Us__Appli__0DAF0CB0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_Licensee_aspnet_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Me__UserI__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Pe__PathI__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Pe__PathI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Pe__UserI__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__aspnet_Pr__UserI__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Product_CDC_DefaultItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteGroup_CDC_DefaultItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Product_CDC_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteItem_CDC_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_CDC_DesignerInitials" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Product_CDC_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteItem_CDC_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteItem_CDC_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_CDC_ProfitType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_User" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Quote_User2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteItem_CDC_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteTerm_CDC_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_QuoteGroup_QuoteGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Rate_CDC_RateCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_Rate_CDC_RateType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_SecretaryRelationship_User" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CDC_SecretaryRelationship_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Address_CRM_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Address_CRM_PhoneType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Address_CRM_PhoneType1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Address_User" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Company_Licensee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_CRM_Company_User" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_UserLicenseAgreement_LicenseAgreement" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_QuoteColumn_Licensee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_SystemParamters_Licensee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_User_Licensee" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK__QuoteGrou__Quote__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_QuoteData_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_QuoteTemplateValues_Quote" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_QuoteData_QuoteColumn" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_TemplateValue_Template" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.FK_UserLicenseAgreement_User" ManuallyRouted="false" />
+        <AssociationConnector Association="QuoteFastModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

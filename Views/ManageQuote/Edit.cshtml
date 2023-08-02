@@ -1,0 +1,356 @@
+﻿@model  QuoteFastMVC.Models.QuoteInformationViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm("Save", "ManageQuote", FormMethod.Post))
+{
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <h2>Quote Information</h2>
+            <div class="form-group">
+                <label>Quote Header:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].QuoteHeader, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Quote Description:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].QuoteDescription, new { @class = "form-control" })
+            </div>
+            <div class="form-group" style="display: none;">
+                <label>Quote ID:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].QuoteID, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>SalesPerson1:</label>
+                @if (Model.QuoteInformations[0].SalesPerson1Name != null)
+                {
+                    @Html.DropDownListFor(model => model.Users1, new SelectList(Model.Users1, "UserID", "FullName"), Model.QuoteInformations[0].SalesPerson1Name, new { @class = "form-control" })
+                }
+                else
+                {
+                    @Html.DropDownListFor(model => model.Users1, new SelectList(Model.Users1, "UserID", "FullName"), "None", new { @class = "form-control" })
+                }
+            </div>
+
+            <div class="form-group">
+                <label>SalesPerson2:</label>
+                @if (Model.QuoteInformations[0].SalesPerson2Name != null)
+                {
+                    @Html.DropDownListFor(model => model.Users2, new SelectList(Model.Users2, "UserID", "FullName"), Model.QuoteInformations[0].SalesPerson2Name, new { @class = "form-control" })
+                }
+                else
+                {
+                    @Html.DropDownListFor(model => model.Users2, new SelectList(Model.Users2, "UserID", "FullName"), "None", new { @class = "form-control" })
+                }
+
+            </div>
+
+            <div class="form-group">
+                <label for="openingDeclaration">Opening Declaration:</label>
+                @Html.TextAreaFor(model => model.QuoteInformations[0].OpeningDeclaration, new { @class = "form-control", rows = 5 })
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].StatusValue, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group">
+                <label for="companyAddress">Company Address:</label>
+                @*<select class="form-control" name="companyAddress" asp-for="companyAddress">
+                        <option value="1">New Address</option>
+                        @for (int i = 0; i < Model.QuoteInformations[0].CompanyAddressName.Count; i++)
+                        {
+
+                            if (Model.QuoteInformations[0].CRMBillingID == Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID)
+                            {
+                                <option value="@Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID" selected>@Model.QuoteInformations[0].CompanyAddressName[i].FullAddress</option>
+                            }
+                            <option value="@Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID">@Model.QuoteInformations[0].CompanyAddressName[i].FullAddress</option>
+                        }
+                    </select>*@
+                @Html.DropDownListFor(model => model.QuoteInformations[0].CRMBillingID, new SelectList(Model.QuoteInformations[0].CompanyAddressName, "CRMAddressID", "FullAddress", Model.QuoteInformations[0].CRMBillingID), new { id = "billingAddressDropdown" })
+                @*,Model.QuoteInformations[0].CompanyAddressName.Where(add=>add.CRMAddressID==Model.QuoteInformations[0].CRMBillingID).FirstOrDefault().FullAddress)*@
+
+            </div>
+
+            <div class="form-group">
+                <label for="siteAddress">Site Address:</label>
+                @*<select class="form-control" name="siteAddress" asp-for="siteAddress">
+                        <option value="1">Same as Biling Address</option>
+                        <option value="2">New Address</option>
+                        @for (int i = 0; i < Model.QuoteInformations[0].CompanyAddressName.Count; i++)
+                        {
+
+                            if (Model.QuoteInformations[0].CRMShippingID == Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID)
+                            {
+                                <option value="@Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID" selected>@Model.QuoteInformations[0].CompanyAddressName[i].FullAddress</option>
+                            }
+                            <option value="@Model.QuoteInformations[0].CompanyAddressName[i].CRMAddressID">@Model.QuoteInformations[0].CompanyAddressName[i].FullAddress</option>
+                        }
+                    </select>*@
+                @Html.DropDownListFor(model => model.QuoteInformations[0].CRMShippingID, new SelectList(Model.QuoteInformations[0].CompanyAddressName, "CRMAddressID", "FullAddress", Model.QuoteInformations[0].CRMShippingID),new { id= "shippingAddressDropdown" })
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">CompanyName:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].CompanyName, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group">
+                <label for="bidType">BidType:</label>
+                <select class="form-control" name="bidType" asp-for="bidType">
+                    @if (Model.QuoteInformations[0].BidType == 1)
+                    {
+                        <option value="1" selected>Landscape</option>
+                        <option value="2">Maintanance</option>
+                        <option value="3">SnowOnly</option>
+                    }
+                    else if (Model.QuoteInformations[0].BidType == 2)
+                    {
+                        <option value="1">Landscape</option>
+                        <option value="2" selected>Maintanance</option>
+                        <option value="3">SnowOnly</option>
+                    }
+
+                    else if (Model.QuoteInformations[0].BidType == 3)
+                    {
+                        <option value="1">Landscape</option>
+                        <option value="2">Maintanance</option>
+                        <option value="3" selected>SnowOnly</option>
+                    }
+                    else
+                    {
+                        <option value="1">Landscape</option>
+                        <option value="2">Maintanance</option>
+                        <option value="3">SnowOnly</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="crewSize">Crew Size:</label>
+                @Html.TextBoxFor(model => model.QuoteInformations[0].CrewSize, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label for="preferedWay">Preferred Method of Communication:</label>
+                <select class="form-control" name="preferedWay" asp-for="preferedWay">
+                    <option value="Email" selected>Email</option>
+                    <option value="Phone">Phone</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                @if (Model.QuoteInformations[0].ShowDollarTotals == true)
+                {
+                    <input type="checkbox" id="showDollar" name="showDollar" value=true checked />
+                }
+                else
+                {
+                    <input type="checkbox" id="showDollar" name="showDollar" value=false />
+                }
+                <label for="showDollar"> Show Dollar Totals?</label><br>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="taxable" name="taxable" value="taxable" checked />
+                <label for="taxable">Is Company Taxable?</label><br>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="verbal" name="verbal" value="verbal" />
+                <label for="verbal"> Verbal Acceptance</label><br>
+            </div>
+            <div class="form-group">
+                <label for="taxId">Tax ID:</label>
+                <input type="text" id="taxId" name="taxId" disabled />
+            </div>
+        </div>
+
+        <div style="flex: 1;">
+            <button type="submit" style="margin: 4px; background-color: blue; color: white; margin-left: 10px;">Save Changes</button>
+            <h2>Company Information</h2>
+            @{var billilngAddress = Model.QuoteInformations[0];
+                if (billilngAddress != null)
+                {
+                    <div style="display: flex;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="company">Comapany:</label>
+                            @Html.DropDownListFor(model => model.Companies, new SelectList(Model.Companies.ToList(), "CompanyId", "Name"), Model.QuoteInformations[0].CompanyName, new { @id = "companyDropdown", @name = "companyName" });
+                        </div>
+
+                        <div class="form-group" style="flex: 1;">
+                            <label for="companyName">CompanyName:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="address1">Address 1:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingAddress1, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="address2">Address 2:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingAddress2, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="city">City:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingCity, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="state">State:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingState, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="zip">Zip:</label>
+                            @Html.TextBoxFor(model => model.QuoteInformations[0].BillingZip, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhone, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhone, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="ext">Ext.</label>
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhoneExtension, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhoneExtension, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="com">Comments:</label>
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhoneComments, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingPhoneComments, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="bussiness"></label>
+                        <select class="form-control" name="bussiness" asp-for="bussiness">
+                            <option value="none" selected></option>
+                            <option value="business">Business</option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="fax">Fax</option>
+                        </select>
+                        <select class="form-control" name="bussiness2" asp-for="bussiness2">
+                            <option value="none" selected></option>
+                            <option value="business">Business</option>
+                            <option value="home">Home</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="fax">Fax</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        @Html.TextBoxFor(model => model.QuoteInformations[0].BillingEmail, new { @class = "form-control" })
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div>
+        <h2>Site Information</h2>
+        @{var shippingAddress = Model.QuoteInformations[0];
+            if (shippingAddress != null)
+            {
+                <div class="form-group">
+                    <label for="site">Site:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingSiteName, new { @class = "form-control" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="companyName">CompanyName:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingName, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="address1">Address 1:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingAddress1, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address 2:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingAddress2, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingCity, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingState, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingZip, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhone, new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhone, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="ext">Ext.</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhoneExtension, new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhoneExtension, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="com">Comments:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhoneComments, new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingPhoneComments, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="bussiness"></label>
+                    <select class="form-control" name="bussiness" asp-for="bussiness">
+                        <option value="none" selected></option>
+                        <option value="business">Business</option>
+                        <option value="home">Home</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="fax">Fax</option>
+                    </select>
+                    <select class="form-control" name="bussiness2" asp-for="bussiness2">
+                        <option value="none" selected></option>
+                        <option value="business">Business</option>
+                        <option value="home">Home</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="fax">Fax</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    @Html.TextBoxFor(model => model.QuoteInformations[0].ShippingEmail, new { @class = "form-control" })
+                </div>
+            }
+        }
+    </div>
+}
+
+<script>
+    const checkbox = document.getElementById('taxable');
+    const textbox = document.getElementById('textbox');
+
+    checkbox.addEventListener('change', function () {
+        textbox.disabled = this.checked;
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function appendOptionsToDropdown() {
+            const dropdown = $("#billingAddressDropdown");
+            const dropdown2 = $("#shippingAddressDropdown");
+
+            dropdown.append($("<option></option>").val(-3).text("Select Address"));
+            dropdown.append($("<option></option>").val(-4).text("New Address"));
+            dropdown2.append($("<option></option>").val(-4).text("Same as Billing Address"))
+            dropdown2.append($("<option></option>").val(-4).text("New Address"));
+            dropdown2.append($("<option></option>").val(-3).text("Select Address"));
+
+        }
+
+        appendOptionsToDropdown();
+    });
+</script>
+
+
+

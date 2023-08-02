@@ -1,0 +1,57 @@
+﻿@model  QuoteFastMVC.Models.ManageQuoteViewModel
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<table class="table">
+    <thead>
+        <tr>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Dublicate</th>
+            <th>Revise</th>
+            <th>Work Order</th>
+            <th>Quote/Work Order Number</th>
+            <th>Company Name</th>
+            <th>Site Name</th>
+            <th>Quote/Work Order Description</th>
+            <th>SalesPerson1</th>
+            <th>SalesPerson2</th>
+            <th>Status</th>
+            <th>LastModified</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SearchModels)
+        {
+        <tr>
+            <td><a href="@Url.Action("ViewQuote", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-eye"></i></a></td>
+            @if (item.StatusText.ToLower() == "new/in use")
+            {
+                <td><a href="@Url.Action("Edit", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-edit"></i></a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            <td><a href="@Url.Action("Duplicate", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-copy"></i></a></td>
+            <td><a href="@Url.Action("Revise", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-undo-alt"></i></a></td>
+            @if (item.StatusText.ToLower() == "accepted")
+            {
+                <td><a href="@Url.Action("WorkOrder", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-wrench"></i></a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            <td>@item.QuoteNumber</td>
+            <td>@item.CompanyName</td>
+            <td>@item.SiteName</td>
+            <td>@item.QuoteDescription</td>
+            <td>@item.SalesPersonName</td>
+            <td>@item.SalesPersonName2</td>
+            <td>@item.StatusText</td>
+            <td>@item.ModifyDate</td>
+            <td><a href="@Url.Action("Delete", "ManageQuote", new { id = item.QuoteID })"><i class="fas fa-trash"></i></a></td>
+        </tr>
+        }
+    </tbody>
+</table>
